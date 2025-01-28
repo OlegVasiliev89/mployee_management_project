@@ -23,8 +23,6 @@ namespace employee_management_project
             SearchResultView.RowHeadersVisible = false;
         }
 
-
-
         private void NameRadioBtn_CheckedChanged(object sender, EventArgs e)
         {
             searchOption = "name";
@@ -50,7 +48,7 @@ namespace employee_management_project
                 return;
             }
 
-           
+
             string searchValue = searchText.Text;
             List<Employee> searchResult = EmployeeController.Instance.SearchByOption(searchOption, searchValue);
 
