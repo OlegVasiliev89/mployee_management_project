@@ -30,7 +30,7 @@ namespace employee_management_project.Controllers
         {
             List<Employee> searchResult = new List<Employee>();
 
-            List<Employee> employees = DataSource.Instance.Employees;
+            SortableBindingList<Employee> employees = DataSource.Instance.Employees;
 
             foreach (Employee employee in employees)
             {

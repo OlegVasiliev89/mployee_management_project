@@ -10,7 +10,7 @@ namespace employee_management_project.Controllers
     {
         private static DataSource _instance;
 
-        private List<Employee> _employees = new List<Employee>();
+        private SortableBindingList<Employee> _employees = new SortableBindingList<Employee>();
 
         private DataSource() {
         }
@@ -45,7 +45,7 @@ namespace employee_management_project.Controllers
             _employees.Add(test7);
         }
 
-        public List<Employee> Employees
+        public SortableBindingList<Employee> Employees
         {
             get { return _employees; }
         }
