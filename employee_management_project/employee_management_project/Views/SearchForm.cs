@@ -1,4 +1,5 @@
 ﻿using employee_management_project.Controllers;
+using employee_management_project.Views;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -7,7 +8,7 @@ namespace employee_management_project
 {
     public partial class SearchForm : Form
     {
-        private string searchOption = "name";
+        private string searchOption = "firstname";
 
         private SortableBindingList<Employee> sortableSearchResult = new SortableBindingList<Employee>();
 
@@ -15,7 +16,13 @@ namespace employee_management_project
         {
             InitializeComponent();
             InitializeData();
+            
+            // Temporarily Initializing the main form
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
         }
+
+        
 
         private void InitializeData()
         {
@@ -27,7 +34,7 @@ namespace employee_management_project
 
         private void NameRadioBtn_CheckedChanged(object sender, EventArgs e)
         {
-            searchOption = "name";
+            searchOption = "firstname";
         }
 
         private void IDRadioBtn_CheckedChanged(object sender, EventArgs e)

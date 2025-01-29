@@ -28,13 +28,13 @@ namespace employee_management_project.Controllers
         }
 
         public void LoadData() {
-            Employee test1 = new Employee("test", 10, 1, "HR", 20000.00f);
-            Employee test2 = new Employee("test2", 3, 2, "HR", 20000.00f);
-            Employee test3 = new Employee("test3", 11, 3, "HR", 20000.00f);
-            Employee test4 = new Employee("test4", 15, 1, "HR", 20000.00f);
-            Employee test5 = new Employee("test5", 2, 4, "HR", 20000.00f);
-            Employee test6 = new Employee("test", 22, 1, "HR", 20000.00f);
-            Employee test7 = new Employee("test", 39, 5, "HR", 20000.00f);
+            Employee test1 = new Employee(1,"test","bar","HR",1000.00f,25);
+            Employee test2 = new Employee(2,"test","bar","HR",2000.00f,25);
+            Employee test3 = new Employee(3,"test","bar","HR",3000.00f,25);
+            Employee test4 = new Employee(4,"test","bar","HR",4000.00f,25);
+            Employee test5 = new Employee(5,"test","bar","HR",5000.00f,25);
+            Employee test6 = new Employee(6,"test","bar","HR",6500.00f,25);
+            Employee test7 = new Employee(7,"test","bar","HR",7000.00f,25);
 
             _employees.Add(test1);
             _employees.Add(test2);
