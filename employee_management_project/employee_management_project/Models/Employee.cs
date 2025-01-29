@@ -8,22 +8,20 @@ namespace employee_management_project
 {
     public class Employee
     {
-        public string name { set; get; }
-        public int age { set; get; }
         public int id { set; get; }
-
+        public string firstname { set; get; }
+        public string lastname { set; get; }
         public string department { set; get; }
-
         public float salary { set; get; }
+        public int age { set; get; }
 
-        public Employee(string name, int age, int id, string department, float salary) {
-            this.name = name;
-            this.age = age;
+        public Employee(int id,string firstname, string lastname, string department, float salary, int age) {
             this.id = id;
+            this.firstname = firstname;
+            this.lastname = lastname;
             this.department = department;
             this.salary = salary;
+            this.age = age;
         }
-
-        
     }
 }
