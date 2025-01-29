@@ -47,8 +47,6 @@ namespace employee_management_project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            sortableSearchResult.Clear();
-
             if (searchText.Text.Length <= 0)
             {
                 Console.WriteLine("Please input the " + searchOption + "you want to search!");
@@ -57,12 +55,7 @@ namespace employee_management_project
 
 
             string searchValue = searchText.Text;
-            List<Employee> searchResult = EmployeeController.Instance.SearchByOption(searchOption, searchValue);
-
-            foreach (Employee em in searchResult)
-            {
-                sortableSearchResult.Add(em);
-            }
+            EmployeeController.Instance.SearchByOption(searchOption, searchValue, ref sortableSearchResult);
         }
     }
 }
