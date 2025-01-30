@@ -18,7 +18,7 @@ namespace employee_management_project
             DataSource.Instance.LoadData();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SearchForm());
+            Application.Run(new MainForm());
         }
     }
 }
