@@ -26,9 +26,9 @@ namespace employee_management_project.Controllers
             }
         }
 
-        public List<Employee> SearchByOption(string option, object searchValue)
+        public void SearchByOption(string option, object searchValue, ref SortableBindingList<Employee> searchResult)
         {
-            List<Employee> searchResult = new List<Employee>();
+            searchResult.Clear();
 
             SortableBindingList<Employee> employees = DataSource.Instance.Employees;
 
@@ -46,8 +46,6 @@ namespace employee_management_project.Controllers
                     }
                 }
             }
-
-            return searchResult;
         }
     }
 }
