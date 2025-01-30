@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using employee_management_project.Controllers;
 
 namespace employee_management_project.Views {
   public partial class EmployeeForm : Form {
@@ -36,7 +37,6 @@ namespace employee_management_project.Views {
     }
 
     private void addEmployeeBtn_Click(object sender, EventArgs e) {
-      Console.WriteLine("clicked");
       try {
         int id = int.Parse(idInputBox.Text);
         string firstName = firstNameInputBox.Text;
@@ -47,32 +47,9 @@ namespace employee_management_project.Views {
 
         Employee _newEmployee = new Employee(id, firstName, lastName, department, salary, age);
         _employees.Add(_newEmployee);
+        DataSource.Instance.Employees.Add(_newEmployee);
 
         MessageBox.Show("Employee added successfully!");
-
-
-        // Debug purpose
-
-        //Console.WriteLine(_newEmployee.id);
-        //Console.WriteLine(_newEmployee.firstname);
-        //Console.WriteLine(_newEmployee.lastname);
-        //Console.WriteLine(_newEmployee.department);
-        //Console.WriteLine(_newEmployee.age);
-        //Console.WriteLine(_newEmployee.salary);
-
-        //Console.WriteLine(_employees[0].id);
-        //Console.WriteLine(_employees[0].firstname);
-        //Console.WriteLine(_employees[0].lastname);
-        //Console.WriteLine(_employees[0].department);
-        //Console.WriteLine(_employees[0].age);
-        //Console.WriteLine(_employees[0].salary);
-
-        //Console.WriteLine(_employees[1].id);
-        //Console.WriteLine(_employees[1].firstname);
-        //Console.WriteLine(_employees[1].lastname);
-        //Console.WriteLine(_employees[1].department);
-        //Console.WriteLine(_employees[1].age);
-        //Console.WriteLine(_employees[1].salary);
         
 
         // Clear input fields after adding
