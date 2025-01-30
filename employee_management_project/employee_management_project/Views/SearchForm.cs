@@ -53,7 +53,6 @@ namespace employee_management_project
                 return;
             }
 
-
             string searchValue = searchText.Text;
             EmployeeController.Instance.SearchByOption(searchOption, searchValue, ref sortableSearchResult);
         }

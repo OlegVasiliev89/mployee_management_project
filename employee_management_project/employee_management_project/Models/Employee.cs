@@ -15,6 +15,7 @@ namespace employee_management_project
         public float salary { set; get; }
         public int age { set; get; }
 
+        public Employee() { }
         public Employee(int id,string firstname, string lastname, string department, float salary, int age) {
             this.id = id;
             this.firstname = firstname;

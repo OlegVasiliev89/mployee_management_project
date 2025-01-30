@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,6 +52,7 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Models\DataSource.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Utils\CSVFileHandler.cs" />
     <Compile Include="Views\EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
