@@ -56,5 +56,10 @@ namespace employee_management_project
             string searchValue = searchText.Text;
             EmployeeController.Instance.SearchByOption(searchOption, searchValue, ref sortableSearchResult);
         }
+
+        private void SearchForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

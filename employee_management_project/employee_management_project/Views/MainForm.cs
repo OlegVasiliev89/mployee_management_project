@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using employee_management_project.Controllers;
 using employee_management_project.Views;
 
 namespace employee_management_project
@@ -24,5 +25,18 @@ namespace employee_management_project
       EmployeeForm employeeForm = new EmployeeForm();
       employeeForm.ShowDialog();
     }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            DataSource.Instance.LoadData();
+            dataGridView1.DataSource = DataSource.Instance.Employees;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SearchForm searchForm = new SearchForm();
+            searchForm.ShowDialog();
+        }
   }
 }
