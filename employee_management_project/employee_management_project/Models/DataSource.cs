@@ -13,10 +13,12 @@ namespace employee_management_project.Controllers
         private static DataSource _instance;
 
         private SortableBindingList<Employee> _employees = new SortableBindingList<Employee>();
+        public SortableBindingList<Employee> SearchResult { get; set; }
 
         private readonly string filePath = @"..\..\Models\Data.csv";
 
         private DataSource() {
+            SearchResult = new SortableBindingList<Employee>();
         }
 
         public static DataSource Instance
