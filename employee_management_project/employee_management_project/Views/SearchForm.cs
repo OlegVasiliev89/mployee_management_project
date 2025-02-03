@@ -2,6 +2,7 @@
 using employee_management_project.Views;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace employee_management_project
@@ -12,18 +13,17 @@ namespace employee_management_project
 
         private SortableBindingList<Employee> sortableSearchResult = new SortableBindingList<Employee>();
         private SortableBindingList<Employee> resultForMainGUI = new SortableBindingList<Employee>();
-
-        public SearchForm()
+        private MainForm _mainForm; // the reference of the mainform instance is saved here
+        public SearchForm(MainForm mainForm) // we pass a reference of the mainform in the
+            // construtor of searchform so the mainform is immidietly updated 
         {
             InitializeComponent();
+            _mainForm = mainForm; // the construtor saves the instance 
             InitializeData();
-            
-            // Temporarily Initializing the main form
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
         }
 
-        
+
+
 
         private void InitializeData()
         {
@@ -97,10 +97,17 @@ namespace employee_management_project
 
         private void PRBtn_Click(object sender, EventArgs e)
         {
-            DataSource.Instance.SearchResult.Clear();
-            foreach(DataGridViewRow result in SearchResultView.SelectedRows) {
-                DataSource.Instance.SearchResult.Add((Employee)result.DataBoundItem);
+            foreach (DataGridViewRow row in SearchResultView.SelectedRows)
+            {
+                Employee selectedEmployee = (Employee)row.DataBoundItem; // we cast the data of each row into type Employee
+
+                if (!DataSource.Instance.SearchResult.Any(emp => emp.id == selectedEmployee.id))
+                {// we check if any employee ID is in the list, if it isn't we add it to the list
+                    DataSource.Instance.SearchResult.Add(selectedEmployee);  
+                }
             }
+
+            _mainForm.UpdateDataView(); // we update the list via the public UpdateDataView method
         }
     }
 }
