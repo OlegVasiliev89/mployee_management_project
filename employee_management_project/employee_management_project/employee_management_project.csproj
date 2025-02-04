@@ -49,7 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CSVFileController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\SearchResultController.cs" />
+    <Compile Include="Interfaces\IDataController.cs" />
+    <Compile Include="Interfaces\IFileController.cs" />
     <Compile Include="Models\DataSource.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Utils\CSVFileHandler.cs" />
