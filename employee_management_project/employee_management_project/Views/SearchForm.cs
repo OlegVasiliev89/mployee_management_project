@@ -12,7 +12,6 @@ namespace employee_management_project
         private string searchOption = "firstname";
 
         private SortableBindingList<Employee> sortableSearchResult = new SortableBindingList<Employee>();
-        private SortableBindingList<Employee> resultForMainGUI = new SortableBindingList<Employee>();
         private MainForm _mainForm; // the reference of the mainform instance is saved here
         public SearchForm(MainForm mainForm) // we pass a reference of the mainform in the
             // construtor of searchform so the mainform is immidietly updated 
@@ -101,9 +100,9 @@ namespace employee_management_project
             {
                 Employee selectedEmployee = (Employee)row.DataBoundItem; // we cast the data of each row into type Employee
 
-                if (!DataSource.Instance.SearchResult.Any(emp => emp.id == selectedEmployee.id))
+                if (!SearchResultController.Instance.IsIDExist(selectedEmployee.id))
                 {// we check if any employee ID is in the list, if it isn't we add it to the list
-                    DataSource.Instance.SearchResult.Add(selectedEmployee);  
+                    SearchResultController.Instance.AddItem(selectedEmployee);  
                 }
             }
 

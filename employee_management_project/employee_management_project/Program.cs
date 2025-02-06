@@ -15,7 +15,6 @@ namespace employee_management_project
         [STAThread]
         static void Main()
         {   
-            DataSource.Instance.LoadData();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());

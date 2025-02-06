@@ -12,7 +12,7 @@ namespace employee_management_project.Utils
 {
     public static class CSVFileHandler
     {
-        public static void ReadCSVFile(string filePath, ref SortableBindingList<Employee> result)
+        public static void ReadCSVFile<T>(string filePath, ref SortableBindingList<T> result) where T : class, new()
         {
             try
             {
@@ -28,7 +28,7 @@ namespace employee_management_project.Utils
 
                 foreach (string line in lines.Skip(1)) // Skip header
                 {
-                    Employee employee = new Employee();
+                    T employee = new T();
 
                     string[] values = line.Split(',');
 
@@ -69,11 +69,11 @@ namespace employee_management_project.Utils
             return property;
         }
 
-        public static void WriteCSVFile(string filePath, in SortableBindingList<Employee> result)
+        public static void WriteCSVFile<T>(string filePath, in SortableBindingList<T> result) where T : class, new()
         {
             if (result == null) return;
 
-            var properties = typeof(Employee).GetProperties();
+            var properties = typeof(T).GetProperties();
             var sb = new StringBuilder();
 
             // Write header
