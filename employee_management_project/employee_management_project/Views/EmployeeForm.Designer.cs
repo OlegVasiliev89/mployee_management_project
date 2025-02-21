@@ -200,6 +200,7 @@
       this.Controls.Add(this.addEmployeeBtn);
       this.Controls.Add(this.employeeFormListBox);
       this.Name = "EmployeeForm";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "EmployeeForm";
       this.ResumeLayout(false);
       this.PerformLayout();
