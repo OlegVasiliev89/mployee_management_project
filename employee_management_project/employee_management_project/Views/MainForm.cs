@@ -63,7 +63,7 @@ namespace employee_management_project
 
         private void exportCSVButton_Click_1(object sender, EventArgs e)
         {
-            string filePath = textBox1.Text.ToString() + ".csv";
+            string filePath = exportCSVTextBox.Text.ToString() + ".csv";
             CSVFileHandler.WriteCSVFile(filePath, DataSource.Instance.SearchResult);
             MessageBox.Show("Filtered data exported successfully to " + Path.GetFullPath(filePath));
         }
